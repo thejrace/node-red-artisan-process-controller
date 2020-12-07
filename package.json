@@ -1,0 +1,23 @@
+{
+  "name": "node-red-contrib-artisan-process-controller",
+  "version": "1.0.0",
+  "description": "Artisan process controller for Node-Red.",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint \"src/**/*.js\"",
+    "lint-fix": "eslint --fix \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-red": "1.0.6",
+    "node-red-node-test-helper": "0.2.5",
+    "eslint": "^7.14"
+  },
+  "node-red": {
+    "nodes": {
+      "artisan-process-controller": "src/nodes/artisan-process-controller.js"
+    }
+  }
+}

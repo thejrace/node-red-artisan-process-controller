@@ -1,0 +1,46 @@
+<script type="text/javascript">
+    RED.nodes.registerType('artisan-process-controller',{
+        category: 'function',
+        color: '#e29487',
+        defaults: {
+            name: { value:'' },
+            artisanPath: { value:'/home/ipera/Sites/wifi/artisan' },
+            artisanCommand: { value:'aruba:ale-connector' },
+            arguments: { value: '' },
+            expiresIn: { value: 300 }
+        },
+        inputs:1,
+        outputs:1,
+        icon: 'function.svg',
+        label: function() {
+            return this.name || "Artisan Process Controller";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="artisan-process-controller">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name..">
+    </div>
+    <div class="form-row">
+        <label for="node-input-artisanPath"><i class="fa fa-file"></i> Artisan Path</label>
+        <input type="text" id="node-input-artisanPath" placeholder="Artisan path..">
+    </div>
+    <div class="form-row">
+        <label for="node-input-artisanCommand"><i class="fa fa-terminal"></i> Command</label>
+        <input type="text" id="node-input-artisanCommand" placeholder="Artisan command..">
+    </div>
+    <div class="form-row">
+        <label for="node-input-expiresIn"><i class="fa fa-hourglass"></i> Expires In</label>
+        <input type="text" id="node-input-expiresIn" placeholder="Expires in ( seconds )...">
+    </div>
+    <div class="form-row">
+        <label for="node-input-arguments"><i class="fa fa-ellipsis-h"></i> Arguments</label>
+        <input type="text" id="node-input-arguments" placeholder="Optional command arguments..">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="artisan-process-controller">
+    <p>Obarey !</p>
+</script>
