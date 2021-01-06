@@ -49,8 +49,8 @@ module.exports = function (RED) {
         }, 5000);
 
         // Callback for incoming messages.
-        this.on('input', () => {
-            this.send({topic: this.activeTopic});
+        this.on('input', (msg) => {
+            this.send({topic: 'ipera_guest_engagement_platform_database_'+this.activeTopic, payload: msg.payload});
         });
     }
 
