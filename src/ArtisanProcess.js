@@ -5,9 +5,9 @@ const cp = require('child_process');
  */
 function ArtisanProcess (props)
 {
-    this.props = props;
-    this.process = null;
-    this.createdAt = Date.now() / 1000;
+    this.props      = props;
+    this.process    = null;
+    this.createdAt  = Date.now() / 1000;
 
     this.spawnProcess();
 }
@@ -17,7 +17,7 @@ function ArtisanProcess (props)
  *
  * @return void
  */
-ArtisanProcess.prototype.spawnProcess = function ()
+ArtisanProcess.prototype.spawnProcess = function()
 {
     this.process = cp.spawn(
         'php',
@@ -32,7 +32,7 @@ ArtisanProcess.prototype.spawnProcess = function ()
  *
  * @return void
  */
-ArtisanProcess.prototype.setUpProcessCallbacks = function ()
+ArtisanProcess.prototype.setUpProcessCallbacks = function()
 {
     this.process.on('error', (err) => {
        console.log('ArtisanProcess spawn error.', { error: err});
@@ -48,7 +48,7 @@ ArtisanProcess.prototype.setUpProcessCallbacks = function ()
  *
  * @param data: string
  */
-ArtisanProcess.prototype.pipeData = function (data)
+ArtisanProcess.prototype.pipeData = function(data)
 {
     this.process.stdin.write(data + '\n');
 };
@@ -56,7 +56,7 @@ ArtisanProcess.prototype.pipeData = function (data)
 /**
  * Kills process.
  */
-ArtisanProcess.prototype.kill = function ()
+ArtisanProcess.prototype.kill = function()
 {
     this.process.stdin.end();
     this.process.kill();
@@ -67,7 +67,7 @@ ArtisanProcess.prototype.kill = function ()
  *
  * @return boolean
  */
-ArtisanProcess.prototype.isExpired = function ()
+ArtisanProcess.prototype.isExpired = function()
 {
     return (Date.now() / 1000) - this.createdAt > parseInt(this.props.processExpiresIn);
 };
